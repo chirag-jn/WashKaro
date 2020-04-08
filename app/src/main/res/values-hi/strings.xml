@@ -167,4 +167,6 @@
     <string name="privacy_policy_key" translatable="false">privacy_policy</string>
     <string name="title_activity_settings">समायोजन</string>
 
+    <string name="you_are_safe">आप सुरक्षित है!</string>
+
 </resources>

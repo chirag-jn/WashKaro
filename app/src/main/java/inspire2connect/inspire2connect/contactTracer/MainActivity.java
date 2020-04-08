@@ -9,13 +9,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.LocationManager;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
 import android.text.Html;
 import android.text.Spanned;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -32,13 +30,12 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
-import com.squareup.picasso.Picasso;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
 import inspire2connect.inspire2connect.R;
-import inspire2connect.inspire2connect.contactTracer.base.BaseActivity;
+import inspire2connect.inspire2connect.utils.BaseActivity;
 import inspire2connect.inspire2connect.contactTracer.bluetooth.Constants;
 import inspire2connect.inspire2connect.contactTracer.models.User;
 import inspire2connect.inspire2connect.contactTracer.sqlDB.InteractionRepository;

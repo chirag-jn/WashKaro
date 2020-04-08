@@ -55,9 +55,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import inspire2connect.inspire2connect.contactTracer.MainActivity;
+import inspire2connect.inspire2connect.utils.BaseActivity;
 
 
-public class Home_Activity extends AppCompatActivity implements View.OnClickListener {
+public class Home_Activity extends BaseActivity implements View.OnClickListener {
 
     //    AdapterViewFlipper adapterViewFlipper;
 //    FirebaseStorage firebaseStorage;
@@ -68,9 +69,8 @@ public class Home_Activity extends AppCompatActivity implements View.OnClickList
     private List<SlideModel> slideLists;
     ConstraintLayout ll_but[] = new ConstraintLayout[10];
     ImageButton img_but[]=new ImageButton[10];
-    ConstraintLayout ll_but1, ll_but2, ll_but3, ll_but4, ll_but5, ll_but6, ll_but7, ll_but8,ll_but9,ll_but10;
-    int curr_lang = 2; //1 for eng , 2 for hindi
-    String intentLangExtra = "hindi";
+    int curr_lang = 1; //1 for eng , 2 for hindi
+    String intentLangExtra = "english";
     //    DatabaseReference dref;
     ImageButton flip_left, flip_right;
     Animation anim_in, anim_out, anim1, anim2, anim3, anim4;
@@ -369,7 +369,7 @@ public class Home_Activity extends AppCompatActivity implements View.OnClickList
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.lang_togg_butt) {
-            Toast.makeText(Home_Activity.this, "Language Changed", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(Home_Activity.this, "Language Changed", Toast.LENGTH_SHORT).show();
             switch_language();
 
         } else if (id == R.id.Survey) {
@@ -397,9 +397,11 @@ public class Home_Activity extends AppCompatActivity implements View.OnClickList
         if (curr_lang == 1) {
             curr_lang = 2;
             intentLangExtra = "hindi";
+            changeLang(this, hindiCode);
         } else {
             curr_lang = 1;
             intentLangExtra = "english";
+            changeLang(this, englishCode);
         }
         switchLang();
     }
