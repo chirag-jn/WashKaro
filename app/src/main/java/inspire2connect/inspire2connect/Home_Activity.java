@@ -56,6 +56,7 @@ import java.util.List;
 
 import inspire2connect.inspire2connect.contactTracer.MainActivity;
 import inspire2connect.inspire2connect.utils.BaseActivity;
+import inspire2connect.inspire2connect.utils.LocaleHelper;
 
 
 public class Home_Activity extends BaseActivity implements View.OnClickListener {
@@ -127,6 +128,11 @@ public class Home_Activity extends BaseActivity implements View.OnClickListener 
     }
 
     @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(LocaleHelper.onAttach(newBase));
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_);
@@ -187,7 +193,7 @@ public class Home_Activity extends BaseActivity implements View.OnClickListener 
         anim4 = AnimationUtils.loadAnimation(this, R.anim.anim4);
         flip_left = (ImageButton) findViewById(R.id.flipperLeft);
         flip_right = (ImageButton) findViewById(R.id.flipperRight);
-        switchLang();
+//        switchLang();
 //        corona_helpline = (TextView)findViewById(R.id.Corona_helpline_text);
 //        live_data=(TextView)findViewById(R.id.state_helpline_text);
 
