@@ -53,7 +53,6 @@ public class homeActivity extends BaseActivity implements View.OnClickListener {
     ConstraintLayout[] ll_but = new ConstraintLayout[10];
     ImageButton flip_left, flip_right;
     Animation anim1, anim2, anim3, anim4;
-//    TextView mohfw_data1
     TextView mohfw_data2, mohfw_data3, mohfw_data4, mohfw_data5;
     LinearLayout[] statLayouts = new LinearLayout[4];
     LayoutInflater inflater;
@@ -163,7 +162,7 @@ public class homeActivity extends BaseActivity implements View.OnClickListener {
 
     private void usingFirebaseImages(List<Infographics> slideLists) {
         for (int i = 0; i < slideLists.size(); i++) {
-            String downloadImageUrl = slideLists.get(i).InfoURL;
+            String downloadImageUrl = slideLists.get(i).smallURL;
             flipImages(downloadImageUrl);
         }
     }
@@ -314,7 +313,7 @@ public class homeActivity extends BaseActivity implements View.OnClickListener {
 
         int i = viewFlipper.indexOfChild(viewFlipper.getCurrentView());
 
-        String url = slideLists.get(i).InfoURL;
+        String url = slideLists.get(i).largeURL;
         Intent intnt = new Intent(homeActivity.this, InfographicsActivity.class);
         intnt.putExtra("image", url);
         startActivity(intnt);
